@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idrees Arif — Social Media & Digital Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy: #0f2340;
+  --gold: #c9a84c;
+  --gold-light: #e8d49e;
+  --cream: #faf8f4;
+  --text: #1a1a2e;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --border: rgba(0,0,0,0.08);
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.portfolio {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+/* HERO */
+.hero {
+  padding: 64px 0 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 64px;
+  position: relative;
+}
+
+.hero-eyebrow {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(42px, 8vw, 72px);
+  line-height: 1.0;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-role {
+  font-size: 16px;
+  color: var(--muted);
+  font-weight: 300;
+  margin-bottom: 32px;
+  letter-spacing: 0.02em;
+}
+
+.hero-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.link-primary {
+  background: var(--navy);
+  color: #fff;
+}
+
+.link-primary:hover { background: #1a3a5c; }
+
+.link-secondary {
+  border: 1px solid var(--border);
+  color: var(--navy);
+  background: white;
+}
+
+.link-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+.hero-accent {
+  position: absolute;
+  right: 0;
+  top: 48px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e8d49e22, #c9a84c18);
+  border: 1px solid #c9a84c28;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.initials {
+  font-family: 'DM Serif Display', serif;
+  font-size: 52px;
+  color: var(--gold);
+  opacity: 0.6;
+}
+
+/* SECTION */
+.section { margin-bottom: 72px; }
+
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  color: var(--navy);
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.about-block {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.about-block.featured {
+  grid-column: 1 / -1;
+  border-left: 3px solid var(--gold);
+}
+
+.about-block h3 {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.about-block p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #374151;
+  font-weight: 300;
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.skill-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+
+.skill-card:hover { border-color: var(--gold-light); }
+
+.skill-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #faf5e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.skill-icon svg { width: 18px; height: 18px; }
+
+.skill-card h4 {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.skill-card p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+/* WORK */
+.works-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.work-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.work-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(15,35,64,0.1);
+}
+
+.work-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-img-1 { background: linear-gradient(135deg, #1a0a2e, #4a1560); }
+.work-img-2 { background: linear-gradient(135deg, #0a2e1a, #156045); }
+.work-img-3 { background: linear-gradient(135deg, #2e1a0a, #604515); }
+.work-img-4 { background: linear-gradient(135deg, #0a1a2e, #154560); }
+.work-img-5 { background: linear-gradient(135deg, #2e0a1a, #601545); }
+
+.work-placeholder {
+  font-family: 'DM Serif Display', serif;
+  font-size: 42px;
+  color: rgba(255,255,255,0.15);
+  letter-spacing: -0.02em;
+}
+
+.work-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+}
+
+.work-info { padding: 20px; }
+
+.work-info h4 {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.work-info p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.work-result {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--gold);
+  background: #faf5e8;
+  padding: 3px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+}
+
+/* ACCOUNTS */
+.accounts-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.account-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.account-card:hover { border-color: var(--gold); }
+
+.account-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 15px;
+  flex-shrink: 0;
+  color: white;
+}
+
+.av-1 { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366); }
+.av-2 { background: linear-gradient(135deg, #2a9d6f, #1d7a57); }
+.av-3 { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+
+.account-info { flex: 1; }
+
+.account-info strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+
+.account-info span {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+.account-arrow {
+  font-size: 16px;
+  color: var(--gold);
+  opacity: 0.6;
+}
+
+/* TESTIMONIALS */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.quote-mark {
+  font-family: 'DM Serif Display', serif;
+  font-size: 64px;
+  color: var(--gold);
+  opacity: 0.2;
+  line-height: 0.5;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.testimonial-card p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #374151;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.author-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+}
+
+.aa-1 { background: linear-gradient(135deg, #c9a84c, #a07c30); }
+.aa-2 { background: linear-gradient(135deg, #0f2340, #1a3a5c); }
+
+.author-info strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.author-info span {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* CONTACT */
+.contact-bar {
+  background: var(--navy);
+  border-radius: 20px;
+  padding: 40px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.contact-bar h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  color: white;
+  margin-bottom: 6px;
+}
+
+.contact-bar p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+}
+
+.contact-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.cl-gold { background: var(--gold); color: var(--navy); }
+.cl-gold:hover { background: var(--gold-light); }
+.cl-outline { border: 1px solid rgba(255,255,255,0.25); color: white; }
+.cl-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+@media (max-width: 600px) {
+  .about-grid, .skills-grid, .works-grid, .testimonials-grid { grid-template-columns: 1fr; }
+  .about-block.featured { grid-column: auto; }
+  .hero-accent { display: none; }
+  .contact-bar { padding: 28px 24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="portfolio">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">Social Media &amp; Digital Marketing</div>
+    <h1>Idrees<br><em>Arif</em></h1>
+    <p class="hero-role">7+ Years Building Brands Online &nbsp;&middot;&nbsp; Toronto, Canada</p>
+    <div class="hero-links">
+      <a href="mailto:idreesarif95@gmail.com" class="link-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+        Get in touch
+      </a>
+      <a href="https://www.linkedin.com/in/idrees-arif-783557249" target="_blank" class="link-secondary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="tel:+14375578064" class="link-secondary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.61 4.9 2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10a16 16 0 0 0 6.09 6.09l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        437-557-8064
+      </a>
+    </div>
+    <div class="hero-accent"><div class="initials">IA</div></div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section">
+    <div class="section-label">About</div>
+    <div class="section-title">Who I am</div>
+    <div class="about-grid">
+      <div class="about-block featured">
+        <h3>My Story</h3>
+        <p>I'm a social media and digital marketing professional with over 7 years of experience turning brand stories into content that people actually stop to watch, read, and share. I've managed multi-platform accounts across Instagram, Facebook, LinkedIn, and YouTube — writing copy, shooting and editing short-form video, building communities, and running paid campaigns that deliver real results. I thrive in fast-paced environments where creativity meets strategy, and I genuinely love collaborating with teams to bring ideas to life.</p>
+      </div>
+      <div class="about-block">
+        <h3>Communication</h3>
+        <p>Clear, confident, and adaptable — I know how to tailor my message to the right audience, whether I'm writing a corporate LinkedIn post, scripting a punchy Instagram Reel, or presenting results to a stakeholder. I've built lasting client relationships across multiple industries through open, honest communication and consistent follow-through.</p>
+      </div>
+      <div class="about-block">
+        <h3>Public Relations</h3>
+        <p>With a Bachelor's in Advertising &amp; PR and hands-on experience developing integrated communications strategies, I understand how brands earn trust and maintain their reputation. I've coordinated media relations, managed brand messaging across channels, and worked closely with stakeholders to ensure every piece of content aligns with the broader organizational voice.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-label">Expertise</div>
+    <div class="section-title">What I do</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h4>Social Media Management</h4>
+        <p>Instagram, Facebook, LinkedIn &amp; YouTube — content planning, scheduling, and community management across all platforms.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h4>Copywriting &amp; Scripting</h4>
+        <p>Platform-native copy and video scripts that match brand voice and drive engagement — from captions to full campaign narratives.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        </div>
+        <h4>Short-Form Video &amp; Reels</h4>
+        <p>Concept, shoot, and edit Reels and short-form video content using CapCut and Canva for scroll-stopping social output.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>Community Management</h4>
+        <p>Engaging and growing audiences by responding to comments, fielding questions, and building genuine brand loyalty online.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h4>Analytics &amp; Reporting</h4>
+        <p>Tracking performance with Google Analytics and Meta Ads insights, translating data into clear, actionable recommendations.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h4>Paid Social &amp; Campaigns</h4>
+        <p>End-to-end Meta Ads campaign management — targeting, creative, optimization — consistently delivering 2x ROAS.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SELECTED WORKS -->
+  <div class="section">
+    <div class="section-label">Portfolio</div>
+    <div class="section-title">Selected work</div>
+    <div class="works-grid">
+      <div class="work-card">
+        <div class="work-img work-img-1">
+          <span class="work-placeholder">CK</span>
+          <span class="work-tag">Brand Growth</span>
+        </div>
+        <div class="work-info">
+          <h4>The Cupcake Kingdom — Social Presence</h4>
+          <p>Developed and executed a full social media strategy across Instagram and Facebook, producing content, copy, and Reels that grew the brand's community by tens of thousands of followers.</p>
+          <span class="work-result">&#8593; 50% increase in sales</span>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-img work-img-2">
+          <span class="work-placeholder">SR</span>
+          <span class="work-tag">Content Strategy</span>
+        </div>
+        <div class="work-info">
+          <h4>Sehrish Ramzan — Personal Brand</h4>
+          <p>Managed organic content, community engagement, and brand voice for a personal brand account — building an engaged, loyal audience through consistent storytelling and authentic interaction.</p>
+          <span class="work-result">&#8593; Sustained audience growth</span>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-img work-img-3">
+          <span class="work-placeholder">NS</span>
+          <span class="work-tag">Niche Community</span>
+        </div>
+        <div class="work-info">
+          <h4>Nutrition by Sehri — Health &amp; Wellness</h4>
+          <p>Grew a nutrition and wellness brand on Instagram — creating educational content, engaging short-form video, and copy tailored to a health-conscious audience.</p>
+          <span class="work-result">&#8593; Community built from scratch</span>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-img work-img-4">
+          <span class="work-placeholder">PA</span>
+          <span class="work-tag">Paid Social</span>
+        </div>
+        <div class="work-info">
+          <h4>Meta Ads — Multi-Client Campaigns</h4>
+          <p>Managed performance-driven Meta Ads campaigns across retail, food &amp; beverage, and education clients, delivering measurable ROI through audience segmentation and creative testing.</p>
+          <span class="work-result">&#8593; 2x ROAS delivered consistently</span>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-img work-img-5">
+          <span class="work-placeholder">PR</span>
+          <span class="work-tag">Public Relations</span>
+        </div>
+        <div class="work-info">
+          <h4>University of Management &amp; Technology — PR</h4>
+          <p>Developed integrated communications strategies spanning digital, social, and earned media. Built and maintained media partner relationships while ensuring consistent brand messaging.</p>
+          <span class="work-result">&#8593; Multi-channel reach &amp; visibility</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACCOUNTS MANAGED -->
+  <div class="section">
+    <div class="section-label">Work Showcase</div>
+    <div class="section-title">Instagram accounts managed</div>
+    <div class="accounts-row">
+      <a href="https://www.instagram.com/thecupcakekingdom11" target="_blank" class="account-card">
+        <div class="account-avatar av-1">CK</div>
+        <div class="account-info">
+          <strong>@thecupcakekingdom11</strong>
+          <span>Food &amp; Beverage &nbsp;&middot;&nbsp; Brand growth, Reels, paid campaigns, community management</span>
+        </div>
+        <span class="account-arrow">&#8599;</span>
+      </a>
+      <a href="https://www.instagram.com/sehrishramzan_" target="_blank" class="account-card">
+        <div class="account-avatar av-2">SR</div>
+        <div class="account-info">
+          <strong>@sehrishramzan_</strong>
+          <span>Personal Brand &nbsp;&middot;&nbsp; Content strategy, copywriting, audience engagement</span>
+        </div>
+        <span class="account-arrow">&#8599;</span>
+      </a>
+      <a href="https://www.instagram.com/nutritionbysehri" target="_blank" class="account-card">
+        <div class="account-avatar av-3">NS</div>
+        <div class="account-info">
+          <strong>@nutritionbysehri</strong>
+          <span>Health &amp; Wellness &nbsp;&middot;&nbsp; Educational content, short-form video, niche community building</span>
+        </div>
+        <span class="account-arrow">&#8599;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="section">
+    <div class="section-label">Kind Words</div>
+    <div class="section-title">What clients say</div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <span class="quote-mark">"</span>
+        <p>Thank you for an amazing management of my social media pages. It has been a pleasure to work alongside you, witnessing my brand's growth and engagement soar. Your vision, trust, and openness to innovation have been truly inspiring.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar aa-1">SR</div>
+          <div class="author-info">
+            <strong>Sehrish Ramzan</strong>
+            <span>Client &middot; Personal Brand</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <span class="quote-mark">"</span>
+        <p>I wanted to express my sincere gratitude for your outstanding management of our social media. Your expertise and dedication have been instrumental in our success. Thank you for your exceptional work.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar aa-2">AN</div>
+          <div class="author-info">
+            <strong>Ayesha Noor Iqbal</strong>
+            <span>Client &middot; Brand Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-bar">
+    <div>
+      <h3>Let's work together.</h3>
+      <p>Open to new opportunities in Toronto &amp; remote</p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:idreesarif95@gmail.com" class="cl-gold">Email me</a>
+      <a href="https://www.linkedin.com/in/idrees-arif-783557249" target="_blank" class="cl-outline">LinkedIn</a>
+      <a href="tel:+14375578064" class="cl-outline">Call me</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
